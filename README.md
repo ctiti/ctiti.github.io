@@ -1,5 +1,23 @@
 # NOTE
 
+# VIM
+
+## ideavim
+
+MACOS上ideavimrc的默认地址：~/.ideavimrc
+
+``` 
+set scrolloff=5
+set hlsearch
+set ignorecase
+set keep-english-in-normal
+
+map c ^
+map C $
+map r *
+map R :noh<CR>
+```
+
 # MongoDB
 
 ## 基础查询
@@ -153,3 +171,4 @@ hs.hotkey.bind({'ctrl', 'cmd'}, 'left', position('left'))
 hs.hotkey.bind({'ctrl', 'cmd'}, 'right', position('right'))
 hs.hotkey.bind({'ctrl', 'cmd'}, 'return', position('return'))
 ```
+
