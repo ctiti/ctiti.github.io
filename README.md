@@ -1,10 +1,22 @@
 # NOTE
 
+|序号|描述|地址|
+|:--:|:--:|:--|
+|1|java & jvm|https://docs.oracle.com/javase/specs/index.html|
+|2|docsify|https://docsify.js.org/#/zh-cn/quickstart|
+|3|iconfont|[https://www.iconfont.cn/](https://www.iconfont.cn/)|
+|4|hammerspoon|[http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/)|
+|5|mvnrepo|[https://mvnrepository.com](https://mvnrepository.com)|
+|6|mybatis-plus|[https://mp.baomidou.com/guide/](https://mp.baomidou.com/guide/)|
+|7|fonta-wesome|[https://fontawesome.dashgame.com/](https://fontawesome.dashgame.com/)|
+|8|jedis|[https://tool.oschina.net/uploads/apidocs/](https://tool.oschina.net/uploads/apidocs/)|
+|9|vue|[https://cn.vuejs.org/v2/guide/](https://cn.vuejs.org/v2/guide/)|
+
 # VIM
 
-## ideavim
+## 自定义配置
 
-MACOS上ideavimrc的默认地址：~/.ideavimrc
+> MACOS上ideavimrc的默认地址：~/.ideavimrc
 
 ``` 
 set scrolloff=5
@@ -12,36 +24,12 @@ set hlsearch
 set ignorecase
 set keep-english-in-normal
 
-map c ^
-map C $
-map r *
-map R :noh<CR>
+nmap c ^
+nmap C $
+nmap r *
+nmap R :noh<CR>
+nmap <CR> o<ESC>
 ```
-
-# MongoDB
-
-## 基础查询
-
-| 条件 | 说明 | 示例             |
-|-----|-----|------------------|
-|$gt|大于|{'age':{$gt:18}}|
-|$gte|大于等于|{'age':{$gte:18}}|
-|$lt|小于|{'age':{$lt:30}}|
-|$lte|小于等于|{'age':{$lte:30}}|
-|$ne|不等于|{'username':{$ne:'刘德华'}}|
-|$in|与字段值包含在指定数组中的文档匹配|{'username':{$in:['赵本山', '刘德华', '成龙']}}|
-|$nin|与字段值不包含在指定数组中的文档匹配|{'username':{$nin:['赵本山', '刘德华', '成龙']}}|
-|$or|使用逻辑或连接查询子句，并返回符合任何一个子句条件的文档|{'username':{$or:['赵本山', '刘德华']}}|
-|$and|使用逻辑与连接子句，并返回两个子句条件都匹配的文档|{$and:[{username': 赵本山'}, {age':18}]}|
-|$not|反转查询表达多，返回与查询表达式不匹配的文档|{$not:{username': 赵本山'}}|
-|$nor|使用逻辑或非连接查询子句，返回两个子句都不匹配的文档|{$nor:{age':{$gt:18}}, username': 刘德华'}|
-|$exists|匹配包含字段的文档|{username':{$exists: TRUE}}|
-|$type|匹配指定字段为BSON类型的文档|{username':{$type:<BsonType>}}|
-|$mod|对执行字段执行求模运算，并返回结果为指定值的文档。求模运算的条件是使用数组指定的，其中第一个数值为除数，第二个数组为余数|{number':{$mod:[2, 0]}}|
-|$regex|返回指定字段值与指定正则表达式匹配的文档|{myString':{$regex:come.*.exp'}}|
-|$all|返回这样的文档，即其指定数组字段包含所有指定元素|{username':{$all:[one', two', three']}|
-|$elemMatch|返回这样的文档，即其指定数组字段至少有一个元素与指定的条件都匹配|{myArr':{$elemMatch:{value':6}, size'24}}|
-|$size|返回这样一个文档，即其指定的数组字段为指定的长度|{myArr:{$size:5}}|
 
 # Hammerspoon
 
@@ -58,18 +46,12 @@ step = 2
 
 ## 公共方法
 
-### 带百分比的提示
-
 ``` lua
 function alertMsg(key, value)
     hs.alert.closeAll()
     hs.alert.show(key .. ' ' .. value .. '%', alert_time)
 end
-```
 
-### 不带百分比的提示
-
-``` lua
 function alertMsgP(key, value)
     hs.alert.closeAll()
     hs.alert.show(key .. ' ' .. value, alert_time)
@@ -171,4 +153,29 @@ hs.hotkey.bind({'ctrl', 'cmd'}, 'left', position('left'))
 hs.hotkey.bind({'ctrl', 'cmd'}, 'right', position('right'))
 hs.hotkey.bind({'ctrl', 'cmd'}, 'return', position('return'))
 ```
+
+# MongoDB
+
+## 基础查询
+
+| 条件 | 说明 | 示例             |
+|-----|-----|------------------|
+|$gt|大于|{'age':{$gt:18}}|
+|$gte|大于等于|{'age':{$gte:18}}|
+|$lt|小于|{'age':{$lt:30}}|
+|$lte|小于等于|{'age':{$lte:30}}|
+|$ne|不等于|{'username':{$ne:'刘德华'}}|
+|$in|与字段值包含在指定数组中的文档匹配|{'username':{$in:['赵本山', '刘德华', '成龙']}}|
+|$nin|与字段值不包含在指定数组中的文档匹配|{'username':{$nin:['赵本山', '刘德华', '成龙']}}|
+|$or|使用逻辑或连接查询子句，并返回符合任何一个子句条件的文档|{'username':{$or:['赵本山', '刘德华']}}|
+|$and|使用逻辑与连接子句，并返回两个子句条件都匹配的文档|{$and:[{username': 赵本山'}, {age':18}]}|
+|$not|反转查询表达多，返回与查询表达式不匹配的文档|{$not:{username': 赵本山'}}|
+|$nor|使用逻辑或非连接查询子句，返回两个子句都不匹配的文档|{$nor:{age':{$gt:18}}, username': 刘德华'}|
+|$exists|匹配包含字段的文档|{username':{$exists: TRUE}}|
+|$type|匹配指定字段为BSON类型的文档|{username':{$type:<BsonType>}}|
+|$mod|对执行字段执行求模运算，并返回结果为指定值的文档。求模运算的条件是使用数组指定的，其中第一个数值为除数，第二个数组为余数|{number':{$mod:[2, 0]}}|
+|$regex|返回指定字段值与指定正则表达式匹配的文档|{myString':{$regex:come.*.exp'}}|
+|$all|返回这样的文档，即其指定数组字段包含所有指定元素|{username':{$all:[one', two', three']}|
+|$elemMatch|返回这样的文档，即其指定数组字段至少有一个元素与指定的条件都匹配|{myArr':{$elemMatch:{value':6}, size'24}}|
+|$size|返回这样一个文档，即其指定的数组字段为指定的长度|{myArr:{$size:5}}|
 
